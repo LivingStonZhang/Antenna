@@ -159,6 +159,7 @@ def DBtoFile():
     file = open("src/source_asins/US/source_asin.txt","w")
     for item in result:
         attrs = str(item).strip('\n').split(',')
+        # test delete a little while
         # result = getAsinByCalculate()
         file.write(str(item)+'\n')
 
