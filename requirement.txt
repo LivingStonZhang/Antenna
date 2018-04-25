@@ -1,0 +1,11 @@
+boto
+requests
+pymysql
+BeautifulSoup4
+cachetools
+forex_python #currency api
+numpy
+lxml
+pydblite
+bottlenose
+python-dateutil
