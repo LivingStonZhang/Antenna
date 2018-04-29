@@ -3,6 +3,7 @@ import os,codecs
 import platform
 from datetime import datetime
 from DB.sqliteDB import DButil
+from app.myutil import calculateCore as cc
 
 def get_path(root_dir,directory_list):
     print('root_dir----'+root_dir)
@@ -148,22 +149,19 @@ def convert_isbn(isbn):
         return (10-len(isbn))*'0'+isbn
     else:
         return isbn
-
+# delete files in the folder
 def deleteFile(file):
     pass
 
 # get asin from price_unit depend on speedlevel
 def DBtoFile():
     db = DButil()
-    result = db.selectPriceUnit()
+    resultFromDB = db.selectPriceUnit()
+    deleteFile("src/source_asins/US/")
     file = open("src/source_asins/US/source_asin.txt","w")
-    for item in result:
-        attrs = str(item).strip('\n').split(',')
-        # test delete a little while
-        # result = getAsinByCalculate()
-        file.write(str(item)+'\n')
-
-
+    resultAsin = cc.calculateCore(resultFromDB)
+    for item in resultAsin:
+        
 
 
 
