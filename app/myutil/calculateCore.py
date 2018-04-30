@@ -8,6 +8,7 @@ class calculateCore(object):
 
     # getAsinByCalculate
     def getAsinByCalculate(self):
+        pass
 
 
 
