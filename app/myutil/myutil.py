@@ -3,7 +3,7 @@ import os,codecs
 import platform
 from datetime import datetime
 from DB.sqliteDB import DButil
-from app.myutil import calculateCore as cc
+from app.myutil.calculateCore import calculateCore as cc
 
 def get_path(root_dir,directory_list):
     print('root_dir----'+root_dir)
@@ -159,9 +159,10 @@ def DBtoFile():
     resultFromDB = db.selectPriceUnit()
     deleteFile("src/source_asins/US/")
     file = open("src/source_asins/US/source_asin.txt","w")
-    resultAsin = cc.calculateCore(resultFromDB)
-    for item in resultAsin:
-        
+    resultAsin = cc.getAsinByCalculate(resultFromDB)
+    # for item in resultAsin:
+    #     pass
+
 
 
 

@@ -1,7 +1,7 @@
 __author__ = 'Frank Zhang'
 import sqlite3
 from itertools import islice
-import time;
+import time
 
 class DButil(object):
     """docstring for DButil"""
