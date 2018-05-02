@@ -160,8 +160,8 @@ def DBtoFile():
     deleteFile("src/source_asins/US/")
     file = open("src/source_asins/US/source_asin.txt","w")
     resultAsin = cc.getAsinByCalculate(resultFromDB)
-    # for item in resultAsin:
-    #     pass
+    for item in resultAsin:
+        file.write(item+'\n')
 
 
 
