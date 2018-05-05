@@ -20,6 +20,8 @@ print("source_asin_dir---"+source_asin_dir)
 print("filter_asin_dir---"+filter_asin_dir)
 print("output_dir---"+output_dir)
 
+# This source_asins needs get from main database
+# NEED TO CHECK EVERY TIME ! If there is no new asins need to grab. Then get the asin from price_unit table
 source_asins = myutil.get_source_asins_from_asindir(source_asin_dir)
 output_file = output_dir+region.lower()+'_details.txt'
 left_asins_file = output_dir+region.lower()+'left_asins.txt'
