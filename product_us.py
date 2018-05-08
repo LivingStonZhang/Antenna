@@ -14,14 +14,23 @@ source_asin_dir = myutil.get_path(root_path,['src','source_asins',region])
 filter_asin_dir = myutil.get_path(root_path,['src','filter_asins'])
 output_dir = myutil.get_path(root_path,['src','output'])
 
+# There is a function to delete all file in source_asin_dir
+
 print("region---"+region)
 print("data_type---"+data_type)
 print("source_asin_dir---"+source_asin_dir)
 print("filter_asin_dir---"+filter_asin_dir)
 print("output_dir---"+output_dir)
 
-# This source_asins needs get from main database
-# NEED TO CHECK EVERY TIME ! If there is no new asins need to grab. Then get the asin from price_unit table
+# This source_asins needs get from main database return new asin need to grab details.Generate a new txt file for grab
+# one time per day
+def getAsinRemote():
+    pass
+
+# NEED TO CHECK EVERY TIME ! If there is no new asin need to grab. Then get the asins from price_unit table .
+# Generate another txt file for grab
+DBresult = myutil.DBtoFile()
+
 source_asins = myutil.get_source_asins_from_asindir(source_asin_dir)
 output_file = output_dir+region.lower()+'_details.txt'
 left_asins_file = output_dir+region.lower()+'left_asins.txt'

@@ -154,6 +154,8 @@ def deleteFile(file):
     pass
 
 # get asin from price_unit depend on speedlevel
+# NEED TO CHECK EVERY TIME ! If there is no new asin need to grab. Then get the asins from price_unit table .
+# Generate another txt file for grab
 def DBtoFile():
     db = DButil()
     resultFromDB = db.selectPriceUnit()
