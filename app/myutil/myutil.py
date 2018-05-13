@@ -4,6 +4,7 @@ import platform
 from datetime import datetime
 from DB.sqliteDB import DButil
 from app.myutil.calculateCore import calculateCore as cc
+import shutil
 
 def get_path(root_dir,directory_list):
     print('root_dir----'+root_dir)
@@ -149,9 +150,7 @@ def convert_isbn(isbn):
         return (10-len(isbn))*'0'+isbn
     else:
         return isbn
-# delete files in the folder
-def deleteFile(file):
-    pass
+
 
 # get asin from price_unit depend on speedlevel
 # NEED TO CHECK EVERY TIME ! If there is no new asin need to grab. Then get the asins from price_unit table .
@@ -165,7 +164,16 @@ def DBtoFile():
     for item in resultAsin:
         file.write(item+'\n')
 
+# delete file in the folder
+def deleteFile(folderName):
+    shutil.rmtree(folderName)
+    os.mkdir(folderName)
 
+# check is there any ASIN in remote Database still need to grab
+# return TRUE or FALSE
+def checkRemoteAsinLeft():
+    pass
 
-
-
+# get new asin to grab from remote database
+def getAsinRemote():
+        pass
